@@ -1,5 +1,5 @@
 <?php
-function createUser($username, $password,$firstname,$lastname,$email,$phone,$gender,$birthday,$birthmonth,$birthyear){
+function createUser($username, $password,$firstname,$lastname,$email,$phone,$birthday,$birthmonth,$birthyear,$gender){
  global $db;
  $query = 'select * from users where emailaddress = :email';
 $statement = $db-> prepare($query);
@@ -12,7 +12,7 @@ if($count > 0)
 {
 return true;
 }else{
-$query = 'insert into users (username,passwordHash,firstName,lastName,emailAddress,phoneNumber,gender,birthDate) values (:username,:password,:firstname,:lastname,:email,:phone,:gender,:birthdate)';
+$query = 'insert into users (username,passwordHash,firstName,lastName,emailAddress,phoneNumber,birthDate,gender) values (:username,:password,:firstname,:lastname,:email,:phone,:birthdate,:gender)';
 
 //Code to format DOB
 
@@ -28,8 +28,8 @@ $statement->bindValue(':firstname',$firstname);
 $statement->bindValue(':lastname',$lastname);
 $statement->bindValue(':email',$email);
 $statement->bindValue(':phone',$phone);
-$statement->bindValue(':gender',$gender);
 $statement->bindValue(':birthdate',$birthdate);
+$statement->bindValue(':gender',$gender);
 $statement->execute();
 $statement->closeCursor();
 return false;

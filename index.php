@@ -36,6 +36,12 @@ include("view/list.php");
   $birthmonth = filter_input(INPUT_POST, 'reg_birthmonth');
   $birthyear = filter_input(INPUT_POST, 'reg_birthyear');
   $gender = filter_input(INPUT_POST, 'reg_gender');
+  
+ 
+ echo $birthday; 
+ echo $birthmonth; 
+echo $birthyear; 
+
   if(isset($name) )
 	  //and isset($lastname) and isset($firstname) and isset($email) and isset($phonenumber) 
 	  //and isset($birthday) and isset($birthmonth) and isset($birthyear) and isset(gender) and isset($pass)) 
