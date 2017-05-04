@@ -16,18 +16,18 @@
 </head>-->
 <body>
  <h1> Create a new account</h1>
- <form method = 'post' action = 'index.php'>
+ <form method = 'post' action = '../index.php'>
   <strong> Username: </strong><input type="text" name="reg_uname" value="" /> </br> </br>
   <strong> Password: </strong><input type="password" name="reg_password" value=""/> </br></br>
   
   <strong> First Name: </strong><input type="text" name="reg_firstname" value="" /> </br> </br>
-  <strong> Last Name: </strong><input type="password" name="reg_lastname" value=""/> </br></br>
+  <strong> Last Name: </strong><input type="text" name="reg_lastname" value=""/> </br></br>
   <strong> Email Address : </strong><input type="text" name="reg_email" value="" /> </br> </br>
-  <strong> Phone Number: </strong><input type="password" name="reg_password" value=""/> </br></br>
+  <strong> Phone Number: </strong><input type="text" name="reg_phonenumber" value=""/> </br></br>
   <strong>  Birthday : </strong>
   <!--<input type="text" id="datepicker">-->
   
- <select name = "birthday">
+ <select name = "reg_birthday">
   <option value="">Day</option>
   <option value="1">1</option>
 	<option value="2">2</option>
@@ -62,7 +62,7 @@
 	<option value="31">31</option>
   </select>
   
-  <select name = "birthmonth">
+  <select name = "reg_birthmonth">
   <option value="Month">Month</option>
    <option value="January">Jan</option>
    <option value="Febuary">Feb</option>
@@ -78,7 +78,7 @@
    <option value="December">Dec</option>
   </select>
 
-  <select name = "birthyear">
+  <select name = "reg_birthyear">
   <option value="">Year</option>
 
     <option value="2017">2017</option>
@@ -154,11 +154,13 @@
 	<option value="1947">1947</option>
   </select></br></br>
   <strong> Gender : </strong><input type="radio" name="reg_gender" value="Male">Male</input><input type="radio" name="reg_gender" value="Female">Female</input> </br></br>
-  <input type="hidden" name="action" value="registrar" /></br></br>
-  <input type="submit" value="Register" />
+  <input type="hidden" name="action" value="signup" /></br></br>
+  <!--<input type="hidden" name="action" value="registrar" /></br></br>-->
+ <!-- <input type="submit" value="Register" />-->
+    <input type="submit" value="Sign up" />
  </form>
  <form action="login.php" method = "post">
-  <input type='submit' value='try to login'/>
+  <input type='submit' value='Login'/>
  </form>
 </body>
 </html>

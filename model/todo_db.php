@@ -31,7 +31,7 @@ function getTodoItems($user_id){
  return $result;
 }
 
-function createUser($username, $password){
+/*function createUser($username, $password){
  global $db;
  $query = 'select * from users where username = :name';
 $statement = $db-> prepare($query);
@@ -79,4 +79,7 @@ return true;
  return false;
  }
  }
- ?>
+ 
+*/
+
+?>

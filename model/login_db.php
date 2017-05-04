@@ -1,41 +1,9 @@
 <?php
-function deleteTodoItem($user_id,$todo_id){
-  global $db;
-  $query= 'delete from todos where id=:todo_id and user_id=:user_id';
-
-   $statement = $db-> prepare($query);
-     $statement->bindValue(':user_id',$user_id);
-       $statement->bindValue(':todo_id',$todo_id);
-       $statement->execute();
-       $statement->closeCursor();
-
-}
-function addTodoItem($user_id, $todo_text){
+function createUser($username, $password,$firstname,$lastname,$email,$phone,$gender,$birthday,$birthmonth,$birthyear){
  global $db;
- $query = 'insert into todos(user_id,todo_item) values (:userid,:todo_text)';
-  $statement = $db-> prepare($query);
-  $statement->bindValue(':userid',$user_id);
-  $statement->bindValue(':todo_text',$todo_text);
-  $statement->execute();
-  $statement->closeCursor();
-
-}
-function getTodoItems($user_id){
- global $db;
- $query = 'select * from todos where user_id= :userid';
- $statement = $db-> prepare($query);
- $statement->bindValue(':userid',$user_id);
- $statement->execute();
- $result=$statement->fetchAll();
- $statement->closeCursor();
- return $result;
-}
-
-function createUser($username, $password){
- global $db;
- $query = 'select * from users where username = :name';
+ $query = 'select * from users where emailaddress = :email';
 $statement = $db-> prepare($query);
-$statement->bindValue(':name',$username);
+$statement->bindValue(':email',$email);
 $statement->execute();
 $result=$statement->fetchAll();
 $statement->closeCursor();
@@ -44,10 +12,24 @@ if($count > 0)
 {
 return true;
 }else{
-$query = 'insert into users (username,passwordHash) values (:name,:pass)';
+$query = 'insert into users (username,passwordHash,firstName,lastName,emailAddress,phoneNumber,gender,birthDate) values (:username,:password,:firstname,:lastname,:email,:phone,:gender,:birthdate)';
+
+//Code to format DOB
+
+$birthdate = $birthyear . "-" . $birthmonth . "-" . $birthday;
+//Code ends to format DOB
+
+
+
 $statement = $db-> prepare($query);
-$statement->bindValue(':name',$username);
-$statement->bindValue(':pass',$password);
+$statement->bindValue(':username',$username);
+$statement->bindValue(':password',$password);
+$statement->bindValue(':firstname',$firstname);
+$statement->bindValue(':lastname',$lastname);
+$statement->bindValue(':email',$email);
+$statement->bindValue(':phone',$phone);
+$statement->bindValue(':gender',$gender);
+$statement->bindValue(':birthdate',$birthdate);
 $statement->execute();
 $statement->closeCursor();
 return false;
@@ -56,9 +38,9 @@ return false;
 }
 function isUserValid($username,$password){
   global $db;
-  $query = 'select * from users where username = :name and passwordHash = :pass';
+  $query = 'select * from users where emailAddress = :email and passwordHash = :pass';
  $statement = $db->prepare($query);
-  $statement->bindValue(':name',$username);
+  $statement->bindValue(':email',$username);
 $statement->bindValue(':pass',$password);
 $statement->execute();
 $result = $statement->fetchAll();
