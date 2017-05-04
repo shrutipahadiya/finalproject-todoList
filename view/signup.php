@@ -28,16 +28,16 @@
   <!--<input type="text" id="datepicker">-->
   
  <select name = "reg_birthday">
-  <option value="Day">Day</option>
-  <option value="1">1</option>
-	<option value="2">2</option>
-	<option value="3">3</option>
-	<option value="4">4</option>
-	<option value="5">5</option>
-	<option value="6">6</option>
-	<option value="7">7</option>
-	<option value="8">8</option>
-	<option value="9">9</option>
+	 <option value="Day">Day</option>
+	 <option value="01">1</option>
+	<option value="02">2</option>
+	<option value="03">3</option>
+	<option value="04">4</option>
+	<option value="05">5</option>
+	<option value="06">6</option>
+	<option value="07">7</option>
+	<option value="08">8</option>
+	<option value="09">9</option>
 	<option value="10">10</option>
 	<option value="11">11</option>
 	<option value="12">12</option>
@@ -64,18 +64,18 @@
   
   <select name = "reg_birthmonth">
   <option value="Month">Month</option>
-   <option value="January">Jan</option>
-   <option value="Febuary">Feb</option>
-   <option value="March">Mar</option>
-   <option  value="April">Apr</option>
-   <option value="May">May</option>
-   <option value="June">Jun</option>
-   <option value="July">Jul</option>
-   <option value="August">Aug</option>
-   <option value="September">Sept</option>
-   <option value="October">Oct</option>
-   <option value="November">Nov</option>
-   <option value="December">Dec</option>
+   <option value="01">Jan</option>
+   <option value="02">Feb</option>
+   <option value="03">Mar</option>
+   <option  value="04">Apr</option>
+   <option value="05">May</option>
+   <option value="06">Jun</option>
+   <option value="07">Jul</option>
+   <option value="08">Aug</option>
+   <option value="09">Sept</option>
+   <option value="10">Oct</option>
+   <option value="11">Nov</option>
+   <option value="12">Dec</option>
   </select>
 
   <select name = "reg_birthyear">

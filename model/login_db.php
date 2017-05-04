@@ -1,5 +1,5 @@
 <?php
-function createUser($username, $password,$firstname,$lastname,$email,$phone,$birthday,$birthmonth,$birthyear,$gender){
+function createUser($username, $password,$firstname,$lastname,$email,$phone,$birthdate,$gender){
  global $db;
  $query = 'select * from users where emailaddress = :email';
 $statement = $db-> prepare($query);
@@ -15,11 +15,18 @@ return true;
 $query = 'insert into users (username,passwordHash,firstName,lastName,emailAddress,phoneNumber,birthDate,gender) values (:username,:password,:firstname,:lastname,:email,:phone,:birthdate,:gender)';
 
 //Code to format DOB
+//$date = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
+//$birthdate = $birthyear.'_'.$birthmonth.'_'.$birthday;
+//$birthdate = str_replace("_","-",$date);
 
-$birthdate = $birthyear . "-" . $birthmonth . "-" . $birthday;
 //Code ends to format DOB
 
+//$date = date_create("$birthyear.'_'.$birthmonth.'_'.$birthday");
+//$date1 = date_format($date,"Y-m-j");
+//04062009
 
+//echo "birthdate";
+//echo $birthdate;
 
 $statement = $db-> prepare($query);
 $statement->bindValue(':username',$username);

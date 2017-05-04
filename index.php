@@ -32,27 +32,23 @@ include("view/list.php");
   $lastname = filter_input(INPUT_POST, 'reg_lastname');
   $email = filter_input(INPUT_POST, 'reg_email');
   $phonenumber = filter_input(INPUT_POST, 'reg_phonenumber');
-  $birthday = filter_input(INPUT_POST, 'reg_birthday');
-  $birthmonth = filter_input(INPUT_POST, 'reg_birthmonth');
-  $birthyear = filter_input(INPUT_POST, 'reg_birthyear');
+  //$birthday = filter_input(INPUT_POST, 'reg_birthday');
+  //$birthmonth = filter_input(INPUT_POST, 'reg_birthmonth');
+ // $birthyear = filter_input(INPUT_POST, 'reg_birthyear');
   $gender = filter_input(INPUT_POST, 'reg_gender');
-  
- 
- echo $birthday; 
- echo $birthmonth; 
-echo $birthyear; 
-
-  if(isset($name) )
+ $birthdate = $_POST['reg_birthyear'] . '-' . $_POST['reg_birthmonth'] . '-' . $_POST['reg_birthday'];
+   if(isset($name) )
 	  //and isset($lastname) and isset($firstname) and isset($email) and isset($phonenumber) 
 	  //and isset($birthday) and isset($birthmonth) and isset($birthyear) and isset(gender) and isset($pass)) 
   {
     //$pass = filter_input(INPUT_POST, 'reg_password');
-    $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthday,$birthmonth,$birthyear,$gender);
+   // $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthday,$birthmonth,$birthyear,$gender);
+    $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthdate,$gender);
     if($user_exists == true)
     {
    include('view/user_exists.php');
     }else{
-     header("Location: view/login.php");
+		header("Location: view/login.php");
     }
 
   }
