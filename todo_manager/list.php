@@ -17,12 +17,19 @@ echo "</br></br>";
         <tr>
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
    <td>
-<form action='index.php' method='post'>
+<form action='todo.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='edit'/>
+<input type='submit' value='Edit'/>
+</form>
+</td>
+<td>
+<form action='todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
 <input type='hidden' name='action' value='delete'/>
 <input type='submit' value='Delete'/>
 </form>
-   </td>
+</td>
    </tr>
        <?php endforeach;?>
      </tr>
@@ -37,13 +44,36 @@ echo "</br></br>";
 <?php foreach($result as $res):?>
         <tr>
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
-   <td>
-<form action='index.php' method='post'>
+ 
+
+
+    <td>
+<form action='todo.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='edit'/>
+<input type='submit' value='Edit'/>
+</form>
+   </td>
+
+ <td>
+<form action='todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
 <input type='hidden' name='action' value='delete'/>
 <input type='submit' value='Delete'/>
 </form>
    </td>
+
+
+
+   
+ <td>
+<form action='index.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='Mark as complete'/>
+<input type='submit' value='Mark As Complete'/>
+</form>
+   </td>
+
    </tr>
        <?php endforeach;?>
      </tr>
