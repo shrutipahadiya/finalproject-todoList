@@ -74,4 +74,40 @@ echo "inside---end of-------------deleteCompleteTodoItem ";
 
 }
 
+
+
+function markCompleteTodoItem($user_id,$todo_id){
+  global $db;
+
+echo "inside----------------markCompleteTodoItem ";
+
+echo $user_id;
+echo $todo_id;
+
+
+
+
+
+  $query= 'update todos set status = :status  where id=:todo_id and user_id=:user_id';
+
+   $statement = $db-> prepare($query);
+       $statement->bindValue(':status','1');
+	 $statement->bindValue(':user_id',$user_id);
+       $statement->bindValue(':todo_id',$todo_id);
+	 
+       $statement->execute();
+       $statement->closeCursor();
+
+
+
+	   echo "inside---end of-------------markCompleteTodoItem ";
+
+}
+
+
+
+
+
+
+
 ?>

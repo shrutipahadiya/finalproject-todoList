@@ -80,6 +80,12 @@ $result = getTodoItems($_COOKIE['my_id']);
 
 }else if ($action == 'mark_complete'){
 
-
+if(isset($_POST['item_id'])){
+	$selected = $_POST['item_id'];
+  markCompleteTodoItem($_COOKIE['my_id'],$selected);
+	}
+echo "inside php file after mark complete todo item---------------- ";
+$result = getTodoItems($_COOKIE['my_id']);
+  include('list.php');
 }
 ?>
