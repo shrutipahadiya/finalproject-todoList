@@ -54,17 +54,54 @@ $result = $statement->fetchAll();
 $statement->closeCursor();
 
 $count=$statement->rowCount();
+
+//echo $username;
+//echo $result[0]['id'];
+//echo $result[0]['firstName'];
+//echo $result[0]['lastName'];
+//echo $result[0]['emailAddress'];
+//echo $result[0]['username'];
+
+
+
 if($count == 1) {
- setcookie('login',$username);
- setcookie('my_id',$result[0]['id']);
+ setcookie('login',$username);   //email
  setcookie('islogged',true);
+ setcookie('my_id',$result[0]['id']);
+setcookie('my_firstname',$result[0]['firstName']);
+setcookie('my_lastname',$result[0]['lastName']);
+setcookie('my_email',$result[0]['emailAddress']);
+setcookie('my_username',$result[0]['username']);
+
 return true;
  
  }else{
+
+
+setcookie('login',false);
  unset($_COOKIE['login']);
- setcookie('login',false);
  setcookie('islogged',false);
- setcookie('id',false);
+
+setcookie('my_id',false);
+unset($_COOKIE['my_id']);
+
+setcookie('my_firstname',false);
+unset($_COOKIE['my_firstname']);
+
+setcookie('my_lastname',false);
+unset($_COOKIE['my_lastname']);
+
+setcookie('my_email',false);
+unset($_COOKIE['my_email']);
+
+setcookie('my_username',false);
+unset($_COOKIE['my_username']);
+ 
+
+
+ //setcookie('id',false);
+
+
  return false;
  }
  }

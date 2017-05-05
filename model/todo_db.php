@@ -22,9 +22,9 @@ function addTodoItem($user_id, $todo_text){
 }
 function getTodoItems($user_id){
  global $db;
- $query = 'select * from todos where user_id= :userid';
+ $query = 'select * from todos where user_id= :email';
  $statement = $db-> prepare($query);
- $statement->bindValue(':userid',$user_id);
+ $statement->bindValue(':email',$user_id);
  $statement->execute();
  $result=$statement->fetchAll();
  $statement->closeCursor();

@@ -38,8 +38,10 @@ $userExists = isUserExist($username);
 
 if($userExists == true){
    if($suc == true){
+	//echo $_COOKIE['my_id'];
 	$result = getTodoItems($_COOKIE['my_id']);
-	include("view/list.php");
+	//echo $result;
+	include("todo_manager/list.php");
    }else{
 
  header("Location: view/loginError.php");
