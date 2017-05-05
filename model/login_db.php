@@ -68,4 +68,33 @@ return true;
  return false;
  }
  }
+ 
+
+
+ function isUserExist($username,$password){
+  global $db;
+  $query = 'select * from users where emailAddress = :email';
+ $statement = $db->prepare($query);
+  $statement->bindValue(':email',$username);
+//$statement->bindValue(':pass',$password);
+$statement->execute();
+$result = $statement->fetchAll();
+$statement->closeCursor();
+
+$count=$statement->rowCount();
+
+if($count == 1) {
+ //setcookie('login',$username);
+ //setcookie('my_id',$result[0]['id']);
+ //setcookie('islogged',true);
+return true;
+ 
+ }else{
+ //unset($_COOKIE['login']);
+ //setcookie('login',false);
+ //setcookie('islogged',false);
+ //setcookie('id',false);
+ return false;
+ }
+ }
  ?>

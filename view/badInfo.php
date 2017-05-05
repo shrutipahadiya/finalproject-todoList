@@ -1,3 +1,3 @@
 <?php
- echo " Wrong username or password, try again!</br>?";
+ echo " Username doesnot exist.Please sign up to continue!</br>?";
  ?>

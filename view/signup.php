@@ -17,7 +17,7 @@
 <body>
  <h1> Create a new account</h1>
  <form method = 'post' action = '../index.php'>
-  <strong> Username: </strong><input type="text" name="reg_uname" value="" /> </br> </br>
+  <strong> Username: </strong><input type="text" name="reg_uname" value="" required/> </br> </br>
   <strong> Password: </strong><input type="password" name="reg_password" value=""/> </br></br>
   
   <strong> First Name: </strong><input type="text" name="reg_firstname" value="" /> </br> </br>
@@ -26,8 +26,8 @@
   <strong> Phone Number: </strong><input type="text" name="reg_phonenumber" value=""/> </br></br>
   <strong>  Birthday : </strong>
   <!--<input type="text" id="datepicker">-->
-  
- <select name = "reg_birthday">
+  <input type="date" name="reg_birthdate" value=""/> </br></br>
+<!-- <select name = "reg_birthday">
 	 <option value="Day">Day</option>
 	 <option value="01">1</option>
 	<option value="02">2</option>
@@ -152,7 +152,8 @@
 	<option value="1949">1949</option>
 	<option value="1948">1948</option>
 	<option value="1947">1947</option>
-  </select></br></br>
+  </select>-->
+  </br></br>
   <strong> Gender : </strong><input type="radio" name="reg_gender" value="Male">Male</input><input type="radio" name="reg_gender" value="Female">Female</input> </br></br>
   <input type="hidden" name="action" value="signup" /></br></br>
   <!--<input type="hidden" name="action" value="registrar" /></br></br>-->

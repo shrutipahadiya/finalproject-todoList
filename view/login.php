@@ -2,13 +2,13 @@
 <body>
 <h1> This is a login page</h1>
 <form method ="post" action="../index.php">
-<strong>Username:</strong><input type="text" name="reg_uname" value=""/><br><br>
+<strong>Email or Username :</strong><input type="text" name="reg_uname" value=""/><br><br>
 <strong>Password:</strong><input type="password" name="reg_password" value=""/><br><br>
 <input type="hidden" name="action" value="test_user"/><br>
 <input type="submit" value="Login"/>
 </form>
 <form action= "signup.php">
- <input type="submit" value="Signup"/>
+New User? Please sign up to create an account <input type="submit" value="Signup"/>
 </form>
 </body>
 </html>
