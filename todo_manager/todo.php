@@ -43,5 +43,43 @@ echo $_COOKIE['my_id'];
  echo "in todo php file for redirection";
   $result = getTodoItems($_COOKIE['my_id']);
   include('list.php');
+}else if ($action == 'edit_incomplete'){
+
+
+}else if ($action == 'delete_incomplete'){
+if(isset($_POST['item_id'])){
+	$selected = $_POST['item_id'];
+
+		echo "inside delete_incomplete action -----";
+		echo $_COOKIE['my_id'];
+		echo $selected;
+	deleteIncompleteTodoItem($_COOKIE['my_id'],$selected);
+	}
+
+		echo "inside php file after db delete ---- ";
+		 
+
+
+   $result = getTodoItems($_COOKIE['my_id']);
+  include('list.php');
+}
+else if ($action == 'edit_complete'){
+
+
+}else if ($action == 'delete_complete'){
+
+
+
+if(isset($_POST['item_id'])){
+	$selected = $_POST['item_id'];
+  deleteCompletedTodoItem($_COOKIE['my_id'],$selected);
+	}
+echo "inside php file after db delete complete---- ";
+$result = getTodoItems($_COOKIE['my_id']);
+  include('list.php');
+
+}else if ($action == 'mark_complete'){
+
+
 }
 ?>

@@ -1,11 +1,22 @@
 <?php
-function deleteTodoItem($user_id,$todo_id){
+function deleteIncompleteTodoItem($user_id,$todo_id){
   global $db;
-  $query= 'delete from todos where id=:todo_id and user_id=:user_id';
+
+echo "inside----------------deleteIncompleteTodoItem ";
+
+echo $user_id;
+echo $todo_id;
+
+echo "inside---end of-------------deleteIncompleteTodoItem ";
+
+
+
+  $query= 'delete from todos where id=:todo_id and user_id=:user_id and status=:status';
 
    $statement = $db-> prepare($query);
      $statement->bindValue(':user_id',$user_id);
        $statement->bindValue(':todo_id',$todo_id);
+	   $statement->bindValue(':status','0');
        $statement->execute();
        $statement->closeCursor();
 
@@ -35,6 +46,32 @@ function getTodoItems($user_id){
  $result=$statement->fetchAll();
  $statement->closeCursor();
  return $result;
+}
+
+
+
+
+function deleteCompletedTodoItem($user_id,$todo_id){
+  global $db;
+
+echo "inside----------------deleteCompleteTodoItem ";
+
+echo $user_id;
+echo $todo_id;
+
+echo "inside---end of-------------deleteCompleteTodoItem ";
+
+
+
+  $query= 'delete from todos where id=:todo_id and user_id=:user_id and status=:status';
+
+   $statement = $db-> prepare($query);
+     $statement->bindValue(':user_id',$user_id);
+       $statement->bindValue(':todo_id',$todo_id);
+	   $statement->bindValue(':status','1');
+       $statement->execute();
+       $statement->closeCursor();
+
 }
 
 ?>

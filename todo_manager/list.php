@@ -11,25 +11,36 @@ echo "</br></br>";
  
 <!--Starts incomplete to do list -->
    <table>
-  <h1>Incomplete todo items<h1>
+  <h1>Incompleted todo items<h1>
     <tr>
        <?php foreach($result as $res):?>
         <tr>
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
    <td>
-<form action='todo.php' method='post'>
+<form action='todo_manager/todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='edit'/>
+<input type='hidden' name='action' value='edit_incomplete'/>
 <input type='submit' value='Edit'/>
 </form>
 </td>
 <td>
-<form action='todo.php' method='post'>
+<form action='todo_manager/todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='delete'/>
+<input type='hidden' name='action' value='delete_incomplete'/>
 <input type='submit' value='Delete'/>
 </form>
 </td>
+
+<td>
+<form action='todo_manager/todo.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='mark_complete'/>
+<input type='submit' value='Mark As Complete'/>
+</form>
+   </td>
+
+
+
    </tr>
        <?php endforeach;?>
      </tr>
@@ -39,7 +50,7 @@ echo "</br></br>";
 
 <!--Starts complete to do list -->
   <table>
- <h1>Complete todo items<h1>
+ <h1>Completed todo items<h1>
 <tr>
 <?php foreach($result as $res):?>
         <tr>
@@ -48,32 +59,22 @@ echo "</br></br>";
 
 
     <td>
-<form action='todo.php' method='post'>
+<form action='todo_manager/todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='edit'/>
+<input type='hidden' name='action' value='edit_complete'/>
 <input type='submit' value='Edit'/>
 </form>
    </td>
 
  <td>
-<form action='todo.php' method='post'>
+<form action='todo_manager/todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='delete'/>
+<input type='hidden' name='action' value='delete_complete'/>
 <input type='submit' value='Delete'/>
 </form>
    </td>
 
-
-
-   
- <td>
-<form action='index.php' method='post'>
-<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='Mark as complete'/>
-<input type='submit' value='Mark As Complete'/>
-</form>
-   </td>
-
+ 
    </tr>
        <?php endforeach;?>
      </tr>
