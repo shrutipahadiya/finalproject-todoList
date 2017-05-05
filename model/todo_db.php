@@ -10,76 +10,31 @@ function deleteTodoItem($user_id,$todo_id){
        $statement->closeCursor();
 
 }
-function addTodoItem($user_id, $todo_text){
+function addTodoItem($userid, $tododesc,$tododate,$todotime){
+ echo "inside addTodoItem db file";
  global $db;
- $query = 'insert into todos(user_id,todo_item) values (:userid,:todo_text)';
+ $query = 'insert into todos(user_id,todo_item,createdate,createtime) values (:userid,:todo_text,:tododate,:todotime)';
   $statement = $db-> prepare($query);
-  $statement->bindValue(':userid',$user_id);
-  $statement->bindValue(':todo_text',$todo_text);
+  $statement->bindValue(':userid',$userid);
+  $statement->bindValue(':todo_text',$tododesc);
+  $statement->bindValue(':tododate',$tododate);
+  $statement->bindValue(':todotime',$todotime);
   $statement->execute();
   $statement->closeCursor();
+  echo "todo item inserted into database";
 
 }
 function getTodoItems($user_id){
  global $db;
- $query = 'select * from todos where user_id= :email';
+ echo $user_id;
+ echo "inside getTodoItems";
+ $query = 'select * from todos where user_id= :userid';
  $statement = $db-> prepare($query);
- $statement->bindValue(':email',$user_id);
+ $statement->bindValue(':userid',$user_id);
  $statement->execute();
  $result=$statement->fetchAll();
  $statement->closeCursor();
  return $result;
 }
-
-/*function createUser($username, $password){
- global $db;
- $query = 'select * from users where username = :name';
-$statement = $db-> prepare($query);
-$statement->bindValue(':name',$username);
-$statement->execute();
-$result=$statement->fetchAll();
-$statement->closeCursor();
-$count = $statement->rowCount();
-if($count > 0)
-{
-return true;
-}else{
-$query = 'insert into users (username,passwordHash) values (:name,:pass)';
-$statement = $db-> prepare($query);
-$statement->bindValue(':name',$username);
-$statement->bindValue(':pass',$password);
-$statement->execute();
-$statement->closeCursor();
-return false;
-}
-
-}
-function isUserValid($username,$password){
-  global $db;
-  $query = 'select * from users where username = :name and passwordHash = :pass';
- $statement = $db->prepare($query);
-  $statement->bindValue(':name',$username);
-$statement->bindValue(':pass',$password);
-$statement->execute();
-$result = $statement->fetchAll();
-$statement->closeCursor();
-
-$count=$statement->rowCount();
-if($count == 1) {
- setcookie('login',$username);
- setcookie('my_id',$result[0]['id']);
- setcookie('islogged',true);
-return true;
- 
- }else{
- unset($_COOKIE['login']);
- setcookie('login',false);
- setcookie('islogged',false);
- setcookie('id',false);
- return false;
- }
- }
- 
-*/
 
 ?>

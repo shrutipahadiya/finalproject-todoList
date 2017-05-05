@@ -6,11 +6,14 @@ echo "</br></br>";
 ?>
 
 <html>
+ 
  <body>
+ 
+<!--Starts incomplete to do list -->
    <table>
-     <tr>
+  <h1>Incomplete todo items<h1>
+    <tr>
        <?php foreach($result as $res):?>
-       
         <tr>
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
    <td>
@@ -24,10 +27,44 @@ echo "</br></br>";
        <?php endforeach;?>
      </tr>
    </table>
-   <form method='post' action='index.php'>
+   
+<!--Ends incomplete to do list -->
+
+<!--Starts complete to do list -->
+  <table>
+ <h1>Complete todo items<h1>
+<tr>
+<?php foreach($result as $res):?>
+        <tr>
+	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
+   <td>
+<form action='index.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='delete'/>
+<input type='submit' value='Delete'/>
+</form>
+   </td>
+   </tr>
+       <?php endforeach;?>
+     </tr>
+   </table>
+
+<!--Ends complete to do list -->
+
+<form action='todo_manager/add_todoitem.php'>
+Click add todo item button to add a new todo item.<input type="submit" value="Add Todo Item"/>
+</form>
+
+
+
+
+   <!--<form method='post' action='index.php'>
       <strong>Description: </strong><input type='text' name='description' /> </br>
       <input type='hidden' name= 'action' value='add'/></br>
       <input type="submit" value="Add"/></br>
-   </form>
+   </form>-->
+
+
+
  </body>
 </html>
