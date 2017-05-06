@@ -14,20 +14,6 @@ return true;
 }else{
 $query = 'insert into users (username,passwordHash,firstName,lastName,emailAddress,phoneNumber,birthDate,gender) values (:username,:password,:firstname,:lastname,:email,:phone,:birthdate,:gender)';
 
-//Code to format DOB
-//$date = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
-//$birthdate = $birthyear.'_'.$birthmonth.'_'.$birthday;
-//$birthdate = str_replace("_","-",$date);
-
-//Code ends to format DOB
-
-//$date = date_create("$birthyear.'_'.$birthmonth.'_'.$birthday");
-//$date1 = date_format($date,"Y-m-j");
-//04062009
-
-//echo "birthdate";
-//echo $birthdate;
-
 $statement = $db-> prepare($query);
 $statement->bindValue(':username',$username);
 $statement->bindValue(':password',$password);
@@ -54,15 +40,6 @@ $result = $statement->fetchAll();
 $statement->closeCursor();
 
 $count=$statement->rowCount();
-
-//echo $username;
-//echo $result[0]['id'];
-//echo $result[0]['firstName'];
-//echo $result[0]['lastName'];
-//echo $result[0]['emailAddress'];
-//echo $result[0]['username'];
-
-
 
 if($count == 1) {
  setcookie('login',$username);   //email
@@ -97,11 +74,6 @@ unset($_COOKIE['my_email']);
 setcookie('my_username',false);
 unset($_COOKIE['my_username']);
  
-
-
- //setcookie('id',false);
-
-
  return false;
  }
  }

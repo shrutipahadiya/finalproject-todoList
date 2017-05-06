@@ -155,16 +155,5 @@ echo "</br></br>";
 Click add todo item button to add a new todo item.<input id="button" class="btn btn-sm btn-primary btn-block"  type="submit" value="Add Todo Item"   data-toggle="tooltip" title="Click here to add a new todo item"/>
 </form>
 
-
-
-
-   <!--<form method='post' action='index.php'>
-      <strong>Description: </strong><input type='text' name='description' /> </br>
-      <input type='hidden' name= 'action' value='add'/></br>
-      <input type="submit" value="Add"/></br>
-   </form>-->
-
-
-
  </body>
 </html>

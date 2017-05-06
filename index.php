@@ -12,38 +12,18 @@ if($action == "show_login_page")
 {
  include('view/login.php');
 }
-
-
 else if($action=='test_user'){
-
-
-
-
-//$category_id = filter_input(INPUT_POST, 'category_id', 
-  //          FILTER_VALIDATE_INT);
-    //$code = filter_input(INPUT_POST, 'code');
-
-
-
-
 $username = $_POST['reg_uname'];
 $password = $_POST['reg_password'];
-
-
-echo $username;
-
-
 $suc = isUserValid($username,$password);
 $userExists = isUserExist($username);
 
 if($userExists == true){
    if($suc == true){
-	   echo "inside chk user ----";
+	 
 	echo $_COOKIE['my_id'];
 	$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
-	//$result = getTodoItems($_COOKIE['my_id']);
-	//echo $result;
 	include("todo_manager/list.php");
    }else{
 
@@ -56,44 +36,28 @@ if($userExists == true){
  header("Location: view/badInfo.php");
 }
 
-/*if($suc == true )
-{
-$result = getTodoItems($_COOKIE['my_id']);
-include("view/list.php");
-
-}else{
- header("Location: view/badInfo.php");
-}*/
-
-
 
 }else if($action == 'signup')
 {
-  // echo "we want to create a registrar";
+  
   $name = filter_input(INPUT_POST, 'reg_uname');
   $pass = filter_input(INPUT_POST, 'reg_password');
   $firstname = filter_input(INPUT_POST, 'reg_firstname');
   $lastname = filter_input(INPUT_POST, 'reg_lastname');
   $email = filter_input(INPUT_POST, 'reg_email');
   $phonenumber = filter_input(INPUT_POST, 'reg_phonenumber');
-  //$birthday = filter_input(INPUT_POST, 'reg_birthday');
-  //$birthmonth = filter_input(INPUT_POST, 'reg_birthmonth');
- // $birthyear = filter_input(INPUT_POST, 'reg_birthyear');
   
   $date = filter_input(INPUT_POST, 'reg_birthdate');
-// $birthdate = $_POST['reg_birthyear'] . '-' . $_POST['reg_birthmonth'] . '-' . $_POST['reg_birthday'];
 $birthdate =  date("Y-m-d", strtotime($date));
 $gender = filter_input(INPUT_POST, 'reg_gender');
 
-//$date = "07/12/2010";
-//$your_date = date("Y-m-d", strtotime($date));
+
 
    if(isset($name) )
 	  //and isset($lastname) and isset($firstname) and isset($email) and isset($phonenumber) 
 	  //and isset($birthday) and isset($birthmonth) and isset($birthyear) and isset(gender) and isset($pass)) 
   {
-    //$pass = filter_input(INPUT_POST, 'reg_password');
-   // $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthday,$birthmonth,$birthyear,$gender);
+    
     $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthdate,$gender);
     if($user_exists == true)
     {
@@ -109,7 +73,7 @@ $gender = filter_input(INPUT_POST, 'reg_gender');
   if(isset($_POST['description']) and $_POST['description']!='' ){
    addTodoItem($_COOKIE['my_id'],$_POST['description']);
   }
- // $result = getTodoItems($_COOKIE['my_id']);
+ 
   $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
   include('todo_manager/list.php');
@@ -119,7 +83,7 @@ $gender = filter_input(INPUT_POST, 'reg_gender');
  deleteTodoItem($_COOKIE['my_id'],$selected);
 
  }
-// $result = getTodoItems($_COOKIE['my_id']);
+
 $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
  include('todo_manager/list.php');
