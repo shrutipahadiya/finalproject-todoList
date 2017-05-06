@@ -17,7 +17,7 @@ echo "</br></br>";
         <tr>
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
    <td>
-<form action='todo_manager/todo.php' method='post'>
+<form action='todo_manager/edit_todoitem.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
 <input type='hidden' name='action' value='edit_incomplete'/>
 <input type='submit' value='Edit'/>
@@ -59,7 +59,7 @@ echo "</br></br>";
 
 
     <td>
-<form action='todo_manager/todo.php' method='post'>
+<form action='todo_manager/edit_todoitem.php'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
 <input type='hidden' name='action' value='edit_complete'/>
 <input type='submit' value='Edit'/>

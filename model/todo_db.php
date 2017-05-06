@@ -106,6 +106,40 @@ echo $todo_id;
 
 
 
+function updateTodoItem($user_id,$todo_id,$tododesc,$tododate,$todotime){
+  global $db;
+
+echo "inside----------------updateTodoItem ";
+
+echo $user_id; //5
+echo $todo_id; //testingitem2
+echo $tododesc;
+
+
+
+
+
+
+  $query= 'update todos set todo_item = :tododesc, createdate=:tododate, createtime=:todotime , updatedate=CURDATE(), updatetime=CURTIME()  where id=:todoid and user_id=:userid';
+
+   $statement = $db-> prepare($query);
+     //  $statement->bindValue(':status','1');
+	 $statement->bindValue(':userid',$user_id);
+       $statement->bindValue(':todoid',$todo_id);
+	   $statement->bindValue(':tododesc',$tododesc);
+	   $statement->bindValue(':tododate',$tododate);
+	   $statement->bindValue(':todotime',$todotime);
+	  // $statement->bindValue(':updatedate',CURDATE());
+	  // $statement->bindValue(':updatetime',CURTIME());
+	 
+       $statement->execute();
+       $statement->closeCursor();
+
+
+
+	   echo "inside---end of-------------updateTodoItem ";
+
+}
 
 
 
