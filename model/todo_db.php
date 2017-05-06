@@ -2,12 +2,12 @@
 function deleteIncompleteTodoItem($user_id,$todo_id){
   global $db;
 
-echo "inside----------------deleteIncompleteTodoItem ";
+//echo "inside----------------deleteIncompleteTodoItem ";
 
-echo $user_id;
-echo $todo_id;
+//echo $user_id;
+//echo $todo_id;
 
-echo "inside---end of-------------deleteIncompleteTodoItem ";
+//echo "inside---end of-------------deleteIncompleteTodoItem ";
 
 
 
@@ -22,7 +22,7 @@ echo "inside---end of-------------deleteIncompleteTodoItem ";
 
 }
 function addTodoItem($userid, $tododesc,$tododate,$todotime){
- echo "inside addTodoItem db file";
+ //echo "inside addTodoItem db file";
  global $db;
  $query = 'insert into todos(user_id,todo_item,createdate,createtime) values (:userid,:todo_text,:tododate,:todotime)';
   $statement = $db-> prepare($query);
@@ -32,7 +32,7 @@ function addTodoItem($userid, $tododesc,$tododate,$todotime){
   $statement->bindValue(':todotime',$todotime);
   $statement->execute();
   $statement->closeCursor();
-  echo "todo item inserted into database";
+  //echo "todo item inserted into database";
 
 }
 function getTodoItems($user_id){
@@ -54,12 +54,12 @@ function getTodoItems($user_id){
 function deleteCompletedTodoItem($user_id,$todo_id){
   global $db;
 
-echo "inside----------------deleteCompleteTodoItem ";
+//echo "inside----------------deleteCompleteTodoItem ";
 
-echo $user_id;
-echo $todo_id;
+//echo $user_id;
+//echo $todo_id;
 
-echo "inside---end of-------------deleteCompleteTodoItem ";
+//echo "inside---end of-------------deleteCompleteTodoItem ";
 
 
 
@@ -79,10 +79,10 @@ echo "inside---end of-------------deleteCompleteTodoItem ";
 function markCompleteTodoItem($user_id,$todo_id){
   global $db;
 
-echo "inside----------------markCompleteTodoItem ";
+//echo "inside----------------markCompleteTodoItem ";
 
-echo $user_id;
-echo $todo_id;
+//echo $user_id;
+//echo $todo_id;
 
 
 
@@ -100,7 +100,7 @@ echo $todo_id;
 
 
 
-	   echo "inside---end of-------------markCompleteTodoItem ";
+	  // echo "inside---end of-------------markCompleteTodoItem ";
 
 }
 
@@ -109,11 +109,11 @@ echo $todo_id;
 function updateTodoItem($user_id,$todo_id,$tododesc,$tododate,$todotime){
   global $db;
 
-echo "inside----------------updateTodoItem ";
+//echo "inside----------------updateTodoItem ";
 
-echo $user_id; //5
-echo $todo_id; //testingitem2
-echo $tododesc;
+//echo $user_id; //5
+//echo $todo_id; //testingitem2
+//echo $tododesc;
 
 
 
@@ -137,7 +137,7 @@ echo $tododesc;
 
 
 
-	   echo "inside---end of-------------updateTodoItem ";
+	  // echo "inside---end of-------------updateTodoItem ";
 
 }
 

@@ -87,7 +87,7 @@ if(isset($_POST['item_id'])){
 //echo "inside php file after mark complete todo item---------------- ";
 $result = getTodoItems($_COOKIE['my_id']);
   include('list.php');
-}else if ($action == 'cancel_edit'){
+}else if ($action == 'cancel'){
 //echo "inside cancel edit --------";
 $result = getTodoItems($_COOKIE['my_id']);
   include('list.php');
