@@ -30,7 +30,7 @@ $username = $_POST['reg_uname'];
 $password = $_POST['reg_password'];
 
 
-
+echo $username;
 
 
 $suc = isUserValid($username,$password);
@@ -38,7 +38,7 @@ $userExists = isUserExist($username);
 
 if($userExists == true){
    if($suc == true){
-	//echo $_COOKIE['my_id'];
+	echo $_COOKIE['my_id'];
 	$result = getTodoItems($_COOKIE['my_id']);
 	//echo $result;
 	include("todo_manager/list.php");

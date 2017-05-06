@@ -17,13 +17,13 @@
 <body>
  <h1> Create a new account</h1>
  <form method = 'post' action = '../index.php'>
-  <strong> Username: </strong><input type="text" name="reg_uname" value="" required/> </br> </br>
-  <strong> Password: </strong><input type="password" name="reg_password" value="" required/> </br></br>
+  <strong> Username: </strong><input type="text" name="reg_uname" value="" required size="30" maxlength="30" pattern="[A-Za-z0-9]/> </br> </br>
+  <strong> Password: </strong><input type="password" name="reg_password" value="" required size="30" maxlength="30"/> </br></br>
   
-  <strong> First Name: </strong><input type="text" name="reg_firstname" value="" required/> </br> </br>
-  <strong> Last Name: </strong><input type="text" name="reg_lastname" value="" required/> </br></br>
-  <strong> Email Address : </strong><input type="email" name="reg_email" value="" required/> </br> </br>
-  <strong> Phone Number: </strong><input type="text" name="reg_phonenumber" value="" required/> </br></br>
+  <strong> First Name: </strong><input type="text" name="reg_firstname" value="" required size="30" maxlength="30"/> </br> </br>
+  <strong> Last Name: </strong><input type="text" name="reg_lastname" value="" required size="30" maxlength="30"/> </br></br>
+  <strong> Email Address : </strong><input type="email" name="reg_email" value="" required size="30" maxlength="30"/> </br> </br>
+  <strong> Phone Number: </strong><input type="text" name="reg_phonenumber" value="" required size="13" maxlength="30"/> </br></br>
   <strong>  Birthday : </strong>
   <!--<input type="text" id="datepicker">-->
   <input type="date" name="reg_birthdate" value="" required/> </br></br>
