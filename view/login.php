@@ -13,8 +13,8 @@
   <style>
   div.s1 {
     position: absolute;
-    top: 100px;
-    left: 150px;
+    top: 150px;
+    left: 500px;
     width: 200px;
     height: 10px;
     border: none;
@@ -27,8 +27,9 @@ div.head1 {
     height: 13%;
     background-color:grey;
 }
-h1   {color: blue;
+h1   {color: #2e6da4;
 font-size:50px;
+
 }
 </style>
 <script>
@@ -41,9 +42,10 @@ $(document).ready(function(){
 </head> 
 
 <body id="body-color">
-<div class="head1">
-<h1>Todo Application</h1>
-</div>
+<?php include 'header.php'; ?>
+<!--<div class="head1">
+<h1 align="center">Todo Application</h1>
+</div>-->
 
 <div style="width:30%" class="s1">
   <div class="panel panel-primary">
@@ -51,11 +53,11 @@ $(document).ready(function(){
       <div class="panel-body"><form class="form-signin"  method ="post" action="../index.php">
     <div class="form-group">
       <label for="usr">Name:</label>
-      <input type="text" class="form-control" id="reg_uname"  name="reg_uname">
+      <input type="email" class="form-control" id="reg_uname"  name="reg_uname" required size="30" maxlength="30" >
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="reg_password" name="reg_password">
+      <input type="password" class="form-control" id="reg_password" name="reg_password" required size="30" maxlength="30" >
     </div>
   <input type="hidden" name="action" value="test_user"/><br>
 <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Login"  data-toggle="tooltip" title="Login"  />
