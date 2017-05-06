@@ -13,12 +13,25 @@ echo "</br></br>";
    <table>
   <h1>Incompleted todo items<h1>
     <tr>
+<td>Item Description</td>
+<td>Item Creation Date</td>
+<td>Item Creation Time</td>
+	</tr>
+	
+	<tr>
        <?php foreach($result as $res):?>
         <tr>
+	
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
+	<td><a href='detail.php'><?php echo $res['createdate']; ?></a> </td>  
+   <td><a href='detail.php'><?php echo $res['createtime']; ?></a> </td>  
    <td>
 <form action='todo_manager/edit_todoitem.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='description' value='<?php echo $res['todo_item'] ?>'/>
+<input type='hidden' name='createdate' value='<?php echo $res['createdate'] ?>'/>
+<input type='hidden' name='createtime' value='<?php echo $res['createtime'] ?>'/>
+
 <input type='hidden' name='action' value='edit_incomplete'/>
 <input type='submit' value='Edit'/>
 </form>
@@ -51,11 +64,18 @@ echo "</br></br>";
 <!--Starts complete to do list -->
   <table>
  <h1>Completed todo items<h1>
+    <tr>
+<td>Item Description</td>
+<td>Item Creation Date</td>
+<td>Item Creation Time</td>
+	</tr>
 <tr>
 <?php foreach($result as $res):?>
         <tr>
-	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
- 
+	
+ <td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
+	<td><a href='detail.php'><?php echo $res['createdate']; ?></a> </td>  
+   <td><a href='detail.php'><?php echo $res['createtime']; ?></a> </td>  
 
 
     <td>

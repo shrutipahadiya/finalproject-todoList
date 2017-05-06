@@ -6,9 +6,9 @@
  <h1> Edit todo item</h1>
  <form method = 'post' action = 'todo.php'>
   
-  <strong> Item Description: </strong><input type="text" name="edit_description" value="" required/> </br></br>
-  <strong> Iten Due Date :</strong><input type="date" name="edit_duedate" value="" required/> </br></br>
-   <strong> Item Due Time : </strong><input type="time" name="edit_duetime" value="" required /> </br> </br>
+  <strong> Item Description: </strong><input type="text" name="edit_description" value='<?php echo $_POST['description']?>' required/> </br></br>
+  <strong> Iten Due Date :</strong><input type="date" name="edit_duedate" value='<?php echo $_POST['createdate']?>' required/> </br></br>
+   <strong> Item Due Time : </strong><input type="time" name="edit_duetime" value='<?php echo $_POST['createtime']?>' required /> </br> </br>
   
    <input type="hidden" name="action" value="edit_item" /></br></br>
   <!--<input type="hidden" name="action" value="registrar" /></br></br>-->

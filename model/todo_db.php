@@ -39,7 +39,7 @@ function getTodoItems($user_id){
  global $db;
  echo $user_id;
  echo "inside getTodoItems";
- $query = 'select * from todos where user_id= :userid';
+ $query = 'select * from todos where user_id= :userid order by createdate desc , createtime desc';
  $statement = $db-> prepare($query);
  $statement->bindValue(':userid',$user_id);
  $statement->execute();
