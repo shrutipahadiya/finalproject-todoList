@@ -11,8 +11,7 @@ if($action == NULL)
 if($action == "show_login_page")
 {
  include('view/login.php');
-}
-else if($action=='test_user'){
+}else if($action=='test_user'){
 $username = $_POST['reg_uname'];
 $password = $_POST['reg_password'];
 $suc = isUserValid($username,$password);
@@ -51,22 +50,26 @@ if($userExists == true){
 $birthdate =  date("Y-m-d", strtotime($date));
 $gender = filter_input(INPUT_POST, 'reg_gender');
 
+echo "11111111111111";
 
-
-   if(isset($name) )
-	  //and isset($lastname) and isset($firstname) and isset($email) and isset($phonenumber) 
-	  //and isset($birthday) and isset($birthmonth) and isset($birthyear) and isset(gender) and isset($pass)) 
-  {
-    
+   //if(isset($name) and isset($pass) and isset($firstname) and isset($lastname) and isset($email) and isset($phonenumber) 
+	 //  and isset(birthdate) and isset(gender))
+	
+ // {
+    echo "22222222222";
     $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthdate,$gender);
     if($user_exists == true)
     {
    include('view/user_exists.php');
     }else{
-		header("Location: view/login.php");
-    }
+		include('view/createuser_success.php');
+		//header("Location: view/login.php");
+    //}
 
   }
+  //else{
+ //include('view/invalid_data.php');
+  //}
 
 }else if($action == 'add')
 {

@@ -55,35 +55,35 @@ $(document).ready(function(){
    
 	<div class="form-group">
    <label for="usr">Username:</label> 
-  <input type="text" class="form-control" name="reg_uname" id="reg_uname" value="" required size="30" maxlength="30"/> 
+  <input type="text" class="form-control" name="reg_uname" id="reg_uname" value="" required size="30" maxlength="30" pattern="[a-zA-Z0-9]+" title="alphabets and numbers allowed"/> 
   </div>
 
    <div class="form-group">
    <label for="password">Password: </label>
-   <input type="password" class="form-control"  name="reg_password" id="reg_password" value="" required size="30" maxlength="30"/> 
+   <input type="password" class="form-control"  name="reg_password" id="reg_password" value="" required size="30" maxlength="30" /> 
    </div> 
    
    <div class="form-group">
   <label for="firstname">First Name:</label>
-  <input type="text" class="form-control" name="reg_firstname" id="reg_firstname" value="" required size="30" maxlength="30"/> 
+  <input type="text" class="form-control" name="reg_firstname" id="reg_firstname" value="" required size="30" maxlength="30" pattern="[a-zA-Z0-9]+" title="alphabets and numbers allowed"/> 
    </div>
    
       <div class="form-group">
   <label for="lastname">Last Name:</label> 
-  <input type="text" class="form-control" name="reg_lastname" id="reg_lastname" value="" required size="30" maxlength="30"/> 
+  <input type="text" class="form-control" name="reg_lastname" id="reg_lastname" value="" required size="30" maxlength="30" pattern="[a-zA-Z0-9]+" title="alphabets and numbers allowed"/> 
   </div>
    
    
    <div class="form-group">
    <label for="email">Email Address :</label> 
-   <input type="email" class="form-control" name="reg_email" id="reg_email" value="" required size="30" maxlength="30"/> 
+   <input type="email" class="form-control" name="reg_email" id="reg_email" value="" required size="30" maxlength="30" /> 
   </div>
 
 
 
    <div class="form-group">
    <label for="phone">Phone Number: </label> 
-  <input type="text" name="reg_phonenumber" class="form-control"  id="reg_phonenumber" value="" required size="13" maxlength="30"/>
+  <input type="text" name="reg_phonenumber" class="form-control"  id="reg_phonenumber" value="" required size="13" maxlength="30" pattern="[0-9+-]+" title="numbers,+,- allowed"/>
   </div>
 
 
@@ -102,17 +102,25 @@ $(document).ready(function(){
 
   <input type="hidden" name="action" value="signup" />
   
-    <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Sign up" data-toggle="tooltip" title="Signup"  />
+    <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Sign up" data-toggle="tooltip" title="Click here to create a new account"  />
  </form>
 
-
- <form action="login.php" method = "post">
-  <input id="button" class="btn btn-sm btn-primary btn-block"  type='submit' value='Login' data-toggle="tooltip" title="Login"  />
- </form>
 
  </div>
+
+  <div class="panel-body">
+<form action="login.php" method = "post">
+  <input id="button" class="btn btn-sm btn-primary btn-block"  type='submit' value='Login' data-toggle="tooltip" title="Click here to login"  />
+ </form>
+</div>
+
     </div>
 	</div> 
+
+
+	
+ 
+
 </body>
 </html>
 

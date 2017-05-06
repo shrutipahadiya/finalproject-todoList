@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Sign-Up</title> 
+<title>Login</title> 
 <link rel="stylesheet" type="text/css" href="../style/style.css">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,9 +50,10 @@ $(document).ready(function(){
 <div style="width:30%" class="s1">
   <div class="panel panel-primary">
       <div class="panel-heading">Login</div>
-      <div class="panel-body"><form class="form-signin"  method ="post" action="../index.php">
+      <div class="panel-body">
+	  <form class="form-signin"  method ="post" action="../index.php">
     <div class="form-group">
-      <label for="usr">Name:</label>
+      <label for="usr">Email:</label>
       <input type="email" class="form-control" id="reg_uname"  name="reg_uname" required size="30" maxlength="30" >
     </div>
     <div class="form-group">
@@ -60,59 +61,19 @@ $(document).ready(function(){
       <input type="password" class="form-control" id="reg_password" name="reg_password" required size="30" maxlength="30" >
     </div>
   <input type="hidden" name="action" value="test_user"/><br>
-<input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Login"  data-toggle="tooltip" title="Login"  />
+<input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Login"  data-toggle="tooltip" title="Click here to login"  />
+</form>
+
+ </div>
+
+  <div class="panel-body">
 <form action= "signup.php">
  <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Signup" data-toggle="tooltip" title="New User? Please sign up to create an account"/>
  </form></div>
     </div>
 	</div>  
-	  
-<!--
-
-</div>
-</div>
-    </div>
-	-->
-
-
-<!--
-
-<tr><td class="form-signin-heading"><legend>Signup Form</td></tr>
-<center>
-<table border="0" style="align:center" > 
-<tr> 
-
-
-
-
-
-</form>
-</tr>
-</table>
-</center>
-
-<!--
-<div class="form-group">
-<form class="form-signin"  method ="post" action="../index.php">
-<td  class="sr-only">Email or Username : </td><td><input class="form-control" type="text" name="reg_uname" value="" required size="30" maxlength="30"/></td><br><br>
-</tr>
-</div>
-<div class="form-group">
-<tr>
-<td  class="sr-only">Password:</td><td><input class="form-control" type="password" name="reg_password" value="" required size="30" maxlength="30"/></td><br><br>
-</tr>
-<div class="form-group">
-
-.
-
-</table>
-<table>
-<form action= "signup.php">
-<tr><td>New User? Please sign up to create an account <input id="button" class="btn btn-lg btn-primary btn-block" type="submit" value="Signup"/></td></tr>
- </form> 
- </table>
- 
- </div> 
- -->
- </body>
+	</body>
  </html>
+  
+
+ 

@@ -4,12 +4,53 @@
 <html>
 <head>
 <title>Todo List</title> 
-<link rel="stylesheet" type="text/css" href="../style/style.css">
+
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+       href="https://cdn.datatables.net/r/dt/jqc-1.11.3,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-flash-1.0.3,b-html5-1.0.3/datatables.min.css" />
+ 
+<script type="text/javascript"
+       src="https://cdn.datatables.net/r/dt/jqc-1.11.3,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-flash-1.0.3,b-html5-1.0.3/datatables.min.js"></script>
+ 
+<script type="text/javascript">
+       $(document).ready(function() {
+	   $('#myTable').DataTable();
+            
+       $('#myTable2').DataTable();
+       });
+</script>
+
+<style type="text/css">
+.dataTables_length {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       position:inherit;
+      
+      
+}
+.dataTables_filter {
+       padding-top: 5px;
+       padding-bottom: 5px;
+      
+}
+div.dt-buttons {
+       padding-top: 5px;
+       padding-bottom: 5px;
+       padding-left:5px;
+       float:right;
+      
+      
+}
+.container-fluid {
+       padding-right: 6px;
+}
+</style>
+ 
+ 
   <style>
   div.s1 {
     position: absolute;
@@ -34,9 +75,9 @@ font-size:50px;
 </style>
 <script>
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
-});
+});*/
 </script>
 
 </head> 
@@ -55,26 +96,99 @@ echo "</br></br>";
 <html>
  
 <body id="body-color">
+
 <?php include '../view/header.php'; ?>
 
- 
-<!--Starts incomplete to do list -->
-   <table>
-  <h1>Incompleted todo items<h1>
-    <tr>
-<td>Item Description</td>
-<td>Item Creation Date</td>
-<td>Item Creation Time</td>
+
+<!--Starts  incomplete to do list -->
+<table width="100%"String class="display"String id="myTable2"String cellspacing="0"String>
+
+
+<thead>
+  <tr>
+  <th>Item Description</th>
+<th>Item Creation Date</th>
+<th>Item Creation Time</th>
+<th></th>
+<th></th>
+<th></th>
+
 	</tr>
-	
-	<tr>
-       <?php foreach($resultincomplete as $res):?>
+</thead>
+	  <tfoot>
+        </tfoot>
+
+
+		<tbody>
+	 <?php foreach($resultincomplete as $res):?>
         <tr>
-	
-	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
-	<td><a href='detail.php'><?php echo $res['createdate']; ?></a> </td>  
-   <td><a href='detail.php'><?php echo $res['createtime']; ?></a> </td>  
-   <td>
+	<td><?php echo $res['todo_item']; ?> </td>  
+	<td><?php echo $res['createdate']; ?> </td>  
+   <td><?php echo $res['createtime']; ?></td>  
+ 
+     <td>
+<form action='todo_manager/edit_todoitem.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='description' value='<?php echo $res['todo_item'] ?>'/>
+<input type='hidden' name='createdate' value='<?php echo $res['createdate'] ?>'/>
+<input type='hidden' name='createtime' value='<?php echo $res['createtime'] ?>'/>
+
+<input type='hidden' name='action' value='edit_incomplete'/>
+<input type='submit' id="button" class="btn btn-sm btn-primary btn-block"  value='Edit'  data-toggle="tooltip" title="Click here to edit a todo item"/>
+</form>
+</td>
+<td>
+<form action='todo_manager/todo.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='delete_incomplete'/>
+<input type='submit' id="button" class="btn btn-sm btn-primary btn-block"  value='Delete'  data-toggle="tooltip" title="Click here to delete a todo item"/>
+</form>
+</td>
+<td>
+<form action='todo_manager/todo.php' method='post'>
+<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
+<input type='hidden' name='action' value='mark_complete'/>
+<input type='submit' id="button" class="btn btn-sm btn-primary btn-block" value='Mark As Complete'/>
+</form>
+   </td>
+
+</tr>
+
+	 <?php endforeach;?>
+	 
+                </tbody>
+
+    </table> 
+
+<!--Ends incomplete to do list -->
+ 
+
+<!--Starts  complete to do list -->
+<table width="100%"String class="display"String id="completeTable"String cellspacing="0"String>
+
+
+<thead>
+  <tr>
+  <th>Item Description</th>
+<th>Item Creation Date</th>
+<th>Item Creation Time</th>
+<th></th>
+<th></th>
+
+	</tr>
+</thead>
+	  <tfoot>
+        </tfoot>
+
+
+		<tbody>
+	 <?php foreach($resultcomplete as $res):?>
+        <tr>
+	<td><?php echo $res['todo_item']; ?> </td>  
+	<td><?php echo $res['createdate']; ?> </td>  
+   <td><?php echo $res['createtime']; ?></td>  
+ 
+     <td>
 <form action='todo_manager/edit_todoitem.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
 <input type='hidden' name='description' value='<?php echo $res['todo_item'] ?>'/>
@@ -93,61 +207,15 @@ echo "</br></br>";
 </form>
 </td>
 
-<td>
-<form action='todo_manager/todo.php' method='post'>
-<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='mark_complete'/>
-<input type='submit' id="button" class="btn btn-sm btn-primary btn-block" value='Mark As Complete'/>
-</form>
-   </td>
 
 
-
-   </tr>
-       <?php endforeach;?>
-     </tr>
-   </table>
-   
-<!--Ends incomplete to do list -->
-
-<!--Starts complete to do list -->
-  <table>
- <h1>Completed todo items<h1>
-    <tr>
-<td>Item Description</td>
-<td>Item Creation Date</td>
-<td>Item Creation Time</td>
 	</tr>
-<tr>
-<?php foreach($resultcomplete as $res):?>
-        <tr>
-	
- <td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
-	<td><a href='detail.php'><?php echo $res['createdate']; ?></a> </td>  
-   <td><a href='detail.php'><?php echo $res['createtime']; ?></a> </td>  
 
+	 <?php endforeach;?>
+	 
+                </tbody>
 
-    <td>
-<form action='todo_manager/edit_todoitem.php'>
-<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='edit_complete'/>
-<input type='submit' id="button" class="btn btn-sm btn-primary btn-block"  value='Edit'  data-toggle="tooltip" title="Click here to edit a todo item"/>
-</form>
-   </td>
-
- <td>
-<form action='todo_manager/todo.php' method='post'>
-<input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
-<input type='hidden' name='action' value='delete_complete'/>
-<input id="button" class="btn btn-sm btn-primary btn-block"  type='submit' value='Delete'   data-toggle="tooltip" title="Click here to delete a todo item"/>
-</form>
-   </td>
-
- 
-   </tr>
-       <?php endforeach;?>
-     </tr>
-   </table>
+    </table> 
 
 <!--Ends complete to do list -->
 
