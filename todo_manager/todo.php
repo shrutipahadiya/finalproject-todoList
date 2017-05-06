@@ -41,7 +41,13 @@ else
   }
  
  //echo "in todo php file for redirection";
-  $result = getTodoItems($_COOKIE['my_id']);
+ // $result = getTodoItems($_COOKIE['my_id']);
+$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	
+	
+
+
   include('list.php');
 }else if ($action == 'edit_incomplete'){
 
@@ -60,7 +66,10 @@ if(isset($_POST['item_id'])){
 		 
 
 
-   $result = getTodoItems($_COOKIE['my_id']);
+  $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	//$result = getTodoItems($_COOKIE['my_id']);
+	
   include('list.php');
 }
 else if ($action == 'edit_complete'){
@@ -75,7 +84,10 @@ if(isset($_POST['item_id'])){
   deleteCompletedTodoItem($_COOKIE['my_id'],$selected);
 	}
 //echo "inside php file after db delete complete---- ";
-$result = getTodoItems($_COOKIE['my_id']);
+$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	//$result = getTodoItems($_COOKIE['my_id']);
+	
   include('list.php');
 
 }else if ($action == 'mark_complete'){
@@ -85,11 +97,16 @@ if(isset($_POST['item_id'])){
   markCompleteTodoItem($_COOKIE['my_id'],$selected);
 	}
 //echo "inside php file after mark complete todo item---------------- ";
-$result = getTodoItems($_COOKIE['my_id']);
-  include('list.php');
+$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	//$result = getTodoItems($_COOKIE['my_id']);
+	  include('list.php');
 }else if ($action == 'cancel'){
 //echo "inside cancel edit --------";
-$result = getTodoItems($_COOKIE['my_id']);
+$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	//$result = getTodoItems($_COOKIE['my_id']);
+	
   include('list.php');
 }else if ($action == 'edit_item'){
  /*if(isset($_POST['item_id']) and isset($_POST['edit_description']) and $_POST['edit_description']!='' and isset($_POST['edit_duedate']) and $_POST['edit_duedate']!='' and isset($_POST['edit_duetime']) and $_POST['edit_duetime']!=''){
@@ -110,7 +127,10 @@ $result = getTodoItems($_COOKIE['my_id']);
 
   //}
   
- $result = getTodoItems($_COOKIE['my_id']);
+ $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	//$result = getTodoItems($_COOKIE['my_id']);
+	
   include('list.php');
 }
 ?>

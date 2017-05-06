@@ -68,7 +68,7 @@ echo "</br></br>";
 	</tr>
 	
 	<tr>
-       <?php foreach($result as $res):?>
+       <?php foreach($resultincomplete as $res):?>
         <tr>
 	
 	<td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  
@@ -119,7 +119,7 @@ echo "</br></br>";
 <td>Item Creation Time</td>
 	</tr>
 <tr>
-<?php foreach($result as $res):?>
+<?php foreach($resultcomplete as $res):?>
         <tr>
 	
  <td><a href='detail.php'><?php echo $res['todo_item']; ?></a> </td>  

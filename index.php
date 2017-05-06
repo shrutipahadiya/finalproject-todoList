@@ -38,8 +38,11 @@ $userExists = isUserExist($username);
 
 if($userExists == true){
    if($suc == true){
+	   echo "inside chk user ----";
 	echo $_COOKIE['my_id'];
-	$result = getTodoItems($_COOKIE['my_id']);
+	$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
+	//$result = getTodoItems($_COOKIE['my_id']);
 	//echo $result;
 	include("todo_manager/list.php");
    }else{
@@ -106,7 +109,9 @@ $gender = filter_input(INPUT_POST, 'reg_gender');
   if(isset($_POST['description']) and $_POST['description']!='' ){
    addTodoItem($_COOKIE['my_id'],$_POST['description']);
   }
-  $result = getTodoItems($_COOKIE['my_id']);
+ // $result = getTodoItems($_COOKIE['my_id']);
+  $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
   include('todo_manager/list.php');
 }else if($action == 'delete'){
  if(isset($_POST['item_id'])){
@@ -114,7 +119,9 @@ $gender = filter_input(INPUT_POST, 'reg_gender');
  deleteTodoItem($_COOKIE['my_id'],$selected);
 
  }
- $result = getTodoItems($_COOKIE['my_id']);
+// $result = getTodoItems($_COOKIE['my_id']);
+$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
+	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
  include('todo_manager/list.php');
 }
 ?>

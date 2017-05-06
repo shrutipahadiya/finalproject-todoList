@@ -35,7 +35,7 @@ function addTodoItem($userid, $tododesc,$tododate,$todotime){
   //echo "todo item inserted into database";
 
 }
-function getTodoItems($user_id){
+/*function getTodoItems($user_id){
  global $db;
  echo $user_id;
  echo "inside getTodoItems";
@@ -46,6 +46,34 @@ function getTodoItems($user_id){
  $result=$statement->fetchAll();
  $statement->closeCursor();
  return $result;
+}*/
+
+function getIncompleteTodoItems($user_id){
+ global $db;
+ echo $user_id;
+ echo "inside getIncompleteTodoItems";
+ $query = 'select * from todos where user_id= :userid and status=:status order by createdate desc , createtime desc';
+ $statement = $db-> prepare($query);
+ $statement->bindValue(':userid',$user_id);
+$statement->bindValue(':status','0');
+ $statement->execute();
+ $resultincomplete=$statement->fetchAll();
+ $statement->closeCursor();
+ return $resultincomplete;
+}
+
+function getCompleteTodoItems($user_id){
+ global $db;
+ echo $user_id;
+ echo "inside getTodoItems";
+ $query = 'select * from todos where user_id= :userid and  status=:status order by createdate desc , createtime desc ';
+ $statement = $db-> prepare($query);
+ $statement->bindValue(':userid',$user_id);
+ $statement->bindValue(':status','1');
+ $statement->execute();
+ $resultcomplete=$statement->fetchAll();
+ $statement->closeCursor();
+ return $resultcomplete;
 }
 
 
