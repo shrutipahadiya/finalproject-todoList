@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Sign-Up</title> 
+<title>User Exist Error</title> 
 <link rel="stylesheet" type="text/css" href="../style/style.css">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

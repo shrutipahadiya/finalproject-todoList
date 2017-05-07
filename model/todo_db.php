@@ -1,13 +1,13 @@
 <?php
-function deleteIncompleteTodoItem($user_id,$todo_id){
+function deleteTodoItem($user_id,$todo_id){
   global $db;
 
-  $query= 'delete from todos where id=:todo_id and user_id=:user_id and status=:status';
+  $query= 'delete from todos where id=:todo_id and user_id=:user_id';
 
    $statement = $db-> prepare($query);
      $statement->bindValue(':user_id',$user_id);
        $statement->bindValue(':todo_id',$todo_id);
-	   $statement->bindValue(':status','0');
+	  // $statement->bindValue(':status','0');
        $statement->execute();
        $statement->closeCursor();
 }
@@ -28,8 +28,8 @@ function addTodoItem($userid, $tododesc,$tododate,$todotime){
 
 function getIncompleteTodoItems($user_id){
  global $db;
- echo $user_id;
- echo "inside getIncompleteTodoItems";
+// echo $user_id;
+ //echo "inside getIncompleteTodoItems";
  $query = 'select * from todos where user_id= :userid and status=:status order by createdate desc , createtime desc';
  $statement = $db-> prepare($query);
  $statement->bindValue(':userid',$user_id);
@@ -42,8 +42,8 @@ $statement->bindValue(':status','0');
 
 function getCompleteTodoItems($user_id){
  global $db;
- echo $user_id;
- echo "inside getTodoItems";
+ //echo $user_id;
+ //echo "inside getTodoItems";
  $query = 'select * from todos where user_id= :userid and  status=:status order by createdate desc , createtime desc ';
  $statement = $db-> prepare($query);
  $statement->bindValue(':userid',$user_id);

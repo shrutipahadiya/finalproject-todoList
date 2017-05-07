@@ -3,14 +3,14 @@
 
 <html>
 <head>
-<title>Sign-Up</title> 
-<link rel="stylesheet" type="text/css" href="../style/style.css">
+<title>Add Todo Item</title> 
+<!--<link rel="stylesheet" type="text/css" href="../style/style.css">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--  <style>
   div.s1 {
     position: absolute;
     top: 150px;
@@ -37,7 +37,7 @@ font-size:50px;
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
 });
-</script>
+</script>-->
 
 </head> 
 
@@ -47,12 +47,13 @@ $(document).ready(function(){
 <div style="width:30%" class="s1">
   <div class="panel panel-primary">
       <div class="panel-heading">Add todo item</div>
-      <div class="panel-body"><form class="form-signin"  method ="post" action="todo.php">
+     <!-- <div class="panel-body"><form class="form-signin"  method ="post" action="todo.php">-->
     
-	
+	<div class="panel-body"><form class="form-signin"  method ="post" action="add_redirect.php">
+	<input type="hidden" name="action" value="add_item"/>
 	<div class="form-group">
    <label for="description">Item Description:</label>
-  <input type="text" name="add_description" id="add_description" value="" required/> 
+  <input type="text" name="add_description" id="add_description" value="" required  size="30" maxlength="30" /> 
 </div>
 
 
@@ -67,10 +68,11 @@ $(document).ready(function(){
    <input type="time" name="add_duetime"   id="add_duetime" value="" required /> 
    </div>
   
-   <input type="hidden" name="action" value="add_item" /></br></br>
+   
    <input type="submit" value="Add Item" id="button" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" title="Add item"  />
  </form>
-
+</div>
+<div class="panel-body">
  <form method = 'post' action = 'todo.php'>
    <input type="hidden" name="action" value="cancel" />
     <input type="submit" value="Cancel"  id="button" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" title="Cancel"  />

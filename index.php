@@ -20,7 +20,7 @@ $userExists = isUserExist($username);
 if($userExists == true){
    if($suc == true){
 	 
-	echo $_COOKIE['my_id'];
+	//echo $_COOKIE['my_id'];
 	$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
 	include("todo_manager/list.php");
@@ -71,7 +71,7 @@ echo "11111111111111";
  //include('view/invalid_data.php');
   //}
 
-}else if($action == 'add')
+}/*else if($action == 'add')
 {
   if(isset($_POST['description']) and $_POST['description']!='' ){
    addTodoItem($_COOKIE['my_id'],$_POST['description']);
@@ -79,8 +79,8 @@ echo "11111111111111";
  
   $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
-  include('todo_manager/list.php');
-}else if($action == 'delete'){
+  include('todo_manager/list.php');*/
+else if($action == 'delete'){
  if(isset($_POST['item_id'])){
  $selected = $_POST['item_id'];
  deleteTodoItem($_COOKIE['my_id'],$selected);
