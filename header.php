@@ -8,13 +8,14 @@
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
-<link rel="stylesheet" href="bootstrap.min.css">
+
+  <link rel="stylesheet" href="bootstrap.min.css">
 	<script type="text/javascript" href="jquery.min.js"></script> 
 	<script type="text/javascript" href="bootstrap.min.js"></script> 
-
+ 
   <style>
   div.s1 {
     position: absolute;
@@ -24,17 +25,36 @@
     height: 10px;
     border: none;
 }
+
+.logoutbtn {
+   
+    top: 400px;
+    right:10px;
+    height: 10px;
+    border: 40px;
+}
 div.head1 {
     position: absolute;
-    top: 0px;
-    
+    top: 0px;    
     width: 100%;
-    height: 13%;
+    height: 14%;
     background-color:grey;
 }
 h1   {color: #2e6da4;
 font-size:50px;
-
+ font-family: "Times New Roman", "Georgia", "Serif";
+  font-style: normal;
+}
+h2   {color: #2e6da4;
+font-size:20px;
+font-family: "Times New Roman", "Georgia", "Serif";
+  font-style: normal;
+}
+.logout{
+ top: 100px;
+    left:300 px;
+    width: 120px;
+    height: 50px;
 }
 </style>
 <script>
@@ -46,10 +66,28 @@ $(document).ready(function(){
 
 </head> 
 
-<body id="body-color">
+<body>
 <div class="head1">
-<h1 align="center">Todo Application</h1>
+
+<table style="width:100%;height:100%">
+<tr>
+<td align="left">
+<h1 >Todo List Application</h1>
+</td>
+<td align="right">
+ </td>
+ </tr>
+ </table>
 </div>
 
- </body>
+
+
+
+ 
+
+	</body>
+
+
+
+ 
  </html>

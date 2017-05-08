@@ -123,6 +123,7 @@ $(document).ready(function(){
 echo "</br></br>";
 echo "</br></br>";
 echo "</br></br>";
+echo "</br></br>";
 
 //echo "<h1> To do list system </h1></br>";
 //echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '</br>';

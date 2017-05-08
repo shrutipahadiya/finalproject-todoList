@@ -42,11 +42,13 @@ div.head1 {
 }
 h1   {color: #2e6da4;
 font-size:50px;
-
+font-family: "Times New Roman", Georgia, Serif;
+  font-style: normal;
 }
 h2   {color: #2e6da4;
 font-size:20px;
-
+font-family: "Times New Roman", Georgia, Serif;
+  font-style: normal;
 }
 .logout{
  top: 100px;
@@ -70,11 +72,11 @@ $(document).ready(function(){
 <table style="width:100%;height:100%">
 <tr>
 <td align="left">
-<h1 >Todo Application</h1>
+<h1 >Todo List Application</h1>
 </td>
 <td align="right">
 <div style="border:40px">
-<?php echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '</br>'?>;
+<?php echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '</br>'?>
 <form action="logout.php" method="post"> 
  <input id="button"  type="submit" value="Logout"  class="btn btn-primary logout" title="Logout"/>
  </form>
