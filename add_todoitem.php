@@ -70,13 +70,13 @@ $(document).ready(function(){
    </div>
   
    
-   <input type="submit" value="Add Item" id="button" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" title="Add item"  />
+   <input type="submit" value="Add Item" id="button" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" title="Click here to save todo item"  />
  </form>
 </div>
 <div class="panel-body">
  <form method = 'post' action = 'todo.php'>
    <input type="hidden" name="action" value="cancel" />
-    <input type="submit" value="Cancel"  id="button" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" title="Cancel"  />
+    <input type="submit" value="Cancel"  id="button" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip" title="Click here to cancel"  />
  </form>
  </div>
     </div>

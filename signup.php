@@ -110,7 +110,7 @@ $(document).ready(function(){
 
   <input type="hidden" name="action" value="signup" />
   
-    <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Sign up" data-toggle="tooltip" title="Click here to create a new account"  />
+    <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Sign up" data-toggle="tooltip" title="Click here to signup"  />
  </form>
 
 

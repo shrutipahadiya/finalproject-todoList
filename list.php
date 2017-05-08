@@ -133,7 +133,7 @@ echo "</br></br>";
 </div>
 <!--Starts  incomplete to do list -->
  <div class="panel panel-primary">
-      <div class="panel-heading">Incomplete To Do items</div>
+      <div class="panel-heading">Incomplete Todo Items</div>
       <div class="panel-body">
 <table width="100%"String class="table table-striped table-bordered"String id="myTable"String cellspacing="0"String>
 
@@ -182,7 +182,7 @@ echo "</br></br>";
 <form action='todo.php' method='post'>
 <input type='hidden' name='item_id' value='<?php echo $res['id'] ?>'/>
 <input type='hidden' name='action' value='mark_complete'/>
-<input type='submit' id="button" class="btn btn-sm btn-primary btn-block" value='Mark As Complete'/>
+<input type='submit' id="button" class="btn btn-sm btn-primary btn-block" value='Mark as Complete'  data-toggle="tooltip" title='Mark as Complete'/>
 </form>
    </td>
 
@@ -200,7 +200,7 @@ echo "</br></br>";
 
 <!--Starts  complete to do list -->
  <div class="panel panel-primary">
-      <div class="panel-heading">Completed To Do items</div>
+      <div class="panel-heading">Completed Todo Items</div>
       <div class="panel-body">
 <table width="100%"String class="table table-striped table-bordered"String id="myTable2"String cellspacing="0"String>
 

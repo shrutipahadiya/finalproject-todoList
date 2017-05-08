@@ -76,7 +76,7 @@ $(document).ready(function(){
 
   <div class="panel-body">
 <form action= "signup.php">
- <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Signup" data-toggle="tooltip" title="New User? Please sign up to create an account"/>
+ <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Signup" data-toggle="tooltip" title="Click here to signup"/>
  </form></div>
     </div>
 	</div>  
