@@ -59,7 +59,7 @@ $(document).ready(function(){
 
 <div class="form-group">
    <label for="description">Item Description:</label>
-  <input type="text" name="edit_description" class="form-control" id="edit_description" value='<?php echo $_POST['description']?>' required size="30" maxlength="30" pattern="[a-zA-Z0-9]+" title="alphabets and numbers allowed"/> 
+  <input type="text" name="edit_description" class="form-control" id="edit_description" value='<?php echo $_POST['description']?>' required size="30" maxlength="30"/> 
 </div>
 
 

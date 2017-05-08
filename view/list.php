@@ -166,6 +166,8 @@ echo "</br></br>";
 <input type='hidden' name='createtime' value='<?php echo $res['createtime'] ?>'/>
 
 <!--<input type='hidden' name='action' value='edit_item'/>-->
+<input type='hidden' name='fname' value='<?php echo $_COOKIE['my_firstname'] ?>'/>
+<input type='hidden' name='lname' value='<?php echo $_COOKIE['my_lastname'] ?>'/>
 <input type='submit' id="button" class="btn btn-sm btn-primary btn-block"  value='Edit'  data-toggle="tooltip" title="Click here to edit a todo item"/>
 </form>
 </td>
@@ -230,7 +232,8 @@ echo "</br></br>";
 <input type='hidden' name='description' value='<?php echo $res['todo_item'] ?>'/>
 <input type='hidden' name='createdate' value='<?php echo $res['createdate'] ?>'/>
 <input type='hidden' name='createtime' value='<?php echo $res['createtime'] ?>'/>
-
+<input type='hidden' name='fname' value='<?php echo $_COOKIE['my_firstname'] ?>'/>
+<input type='hidden' name='lname' value='<?php echo $_COOKIE['my_lastname'] ?>'/>
 <!--<input type='hidden' name='action' value='edit_item'/>-->
 <input type='submit' id="button" class="btn btn-sm btn-primary btn-block"  value='Edit'  data-toggle="tooltip" title="Click here to edit a todo item"/>
 </form>
