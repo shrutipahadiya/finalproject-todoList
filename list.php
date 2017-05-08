@@ -128,6 +128,7 @@ echo "</br></br>";
 //echo "<h1> To do list system </h1></br>";
 //echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '</br>';
 echo "Below is the list of your to-do items: ";
+//echo "Below".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'];
 echo "</br></br>";
 ?>
 </div>

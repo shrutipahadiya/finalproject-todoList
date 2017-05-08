@@ -62,11 +62,13 @@ $(document).ready(function(){
 	  <form class="form-signin"  method ="post" action="index.php">
     <div class="form-group">
       <label for="usr">Email:</label>
-      <input type="email" class="form-control" id="reg_uname"  name="reg_uname" required size="30" maxlength="30" >
+	  
+      <input type="email" class="form-control" id="reg_uname"  name="reg_uname" required size="30" maxlength="30" placeholder="Email" >
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="reg_password" name="reg_password" required size="30" maxlength="30" >
+	   
+      <input type="password" class="form-control" id="reg_password" name="reg_password" required size="30" maxlength="30" placeholder="Password" >
     </div>
   <input type="hidden" name="action" value="test_user"/><br>
 <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Login"  data-toggle="tooltip" title="Click here to login"  />

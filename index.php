@@ -11,7 +11,7 @@ $(document).ready(function(){
 require('db_connect.php');
 require('todo_db.php');
 require('login_db.php');
-require('header1.php');
+
 
 $action = filter_input(INPUT_POST, "action");
 if($action == NULL)
@@ -33,7 +33,8 @@ if($userExists == true){
 	//echo $_COOKIE['my_id'];
 	$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
-
+    
+	include('header1.php');
 	include("list.php");
    }else{
 

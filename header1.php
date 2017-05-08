@@ -72,11 +72,22 @@ $(document).ready(function(){
 <table style="width:100%;height:100%">
 <tr>
 <td align="left">
+<table style="width:100%;height:100%">
+<tr>
+<td>
 <h1 >Todo List Application</h1>
+</td>
+</tr>
+<tr>
+<td>
+<h4>Welcome <?php echo $_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'] ?></h4>
+</td>
+</tr>
+</table>
 </td>
 <td align="right">
 <div style="border:40px">
-<?php echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '</br>'?>
+
 <form action="logout.php" method="post"> 
  <input id="button"  type="submit" value="Logout"  class="btn btn-primary logout" title="Logout"/>
  </form>
