@@ -1,7 +1,17 @@
+<head>
+<link rel="stylesheet" href="style.css">
+<script>
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+</head>
 <?php
-require('model/db_connect.php');
-require('model/todo_db.php');
-require('model/login_db.php');
+require('db_connect.php');
+require('todo_db.php');
+require('login_db.php');
+require('header1.php');
 
 $action = filter_input(INPUT_POST, "action");
 if($action == NULL)
@@ -10,7 +20,7 @@ if($action == NULL)
 }
 if($action == "show_login_page")
 {
- include('view/login.php');
+ include('login.php');
 }else if($action=='test_user'){
 $username = $_POST['reg_uname'];
 $password = $_POST['reg_password'];
@@ -23,16 +33,17 @@ if($userExists == true){
 	//echo $_COOKIE['my_id'];
 	$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
-	include("todo_manager/list.php");
+
+	include("list.php");
    }else{
 
- header("Location: view/loginError.php");
+ header("Location: loginError.php");
 
    }
 
 
 }else{
- header("Location: view/badInfo.php");
+ header("Location: badInfo.php");
 }
 
 
@@ -60,9 +71,9 @@ echo "11111111111111";
     $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthdate,$gender);
     if($user_exists == true)
     {
-   include('view/user_exists.php');
+   include('user_exists.php');
     }else{
-		include('view/createuser_success.php');
+		include('createuser_success.php');
 		//header("Location: view/login.php");
     //}
 
@@ -89,6 +100,6 @@ else if($action == 'delete'){
 
 $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
- include('todo_manager/list.php');
+ include('list.php');
 }
 ?>

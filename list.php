@@ -19,18 +19,15 @@
 <script type="text/javascript"
        src="https://cdn.datatables.net/r/dt/jqc-1.11.3,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,b-1.0.3,b-flash-1.0.3,b-html5-1.0.3/datatables.min.js"></script>
  
-<script type="text/javascript">
-       $(document).ready(function() {
-	   $('#myTable').DataTable();
-            
-      
-       });
-</script>
-<script type="text/javascript">
-       $(document).ready(function() {
 
-	   $('#myTable2').DataTable();
-            
+<script type="text/javascript">
+       $(document).ready(function() {
+ $('#myTable').DataTable({
+        "order": [[ 1, "desc" ]]
+    } );
+	   $('#myTable2').DataTable( {
+        "order": [[ 1, "desc" ]]
+    } );
       
        });
 </script>
@@ -76,13 +73,8 @@ width : 100px !important;
     height: 10px;
     border: none;
 }
-div.head1 {
-    position: absolute;
-    top: 0px;
-    
-    width: 100%;
-    height: 13%;
-    background-color:grey;
+.welcome{
+top:16%;
 }
 h1   {color: #2e6da4;
 font-size:50px;
@@ -113,6 +105,7 @@ $(document).ready(function(){
 <html>
  
 <body id="body-color">
+<div class="welcome">
 <?php
 echo "</br></br>";
 echo "</br></br>";
@@ -123,6 +116,7 @@ echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '
 echo "Below you may find your to-do items: ";
 echo "</br></br>";
 ?>
+</div>
 <!--Starts  incomplete to do list -->
  <div class="panel panel-primary">
       <div class="panel-heading">Incomplete To Do items</div>

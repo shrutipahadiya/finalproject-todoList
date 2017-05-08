@@ -57,19 +57,19 @@ $(document).ready(function(){
 
 <div class="form-group">
    <label for="description">Item Description:</label>
-  <input type="text" name="edit_description" id="edit_description" value='<?php echo $_POST['description']?>' required size="30" maxlength="30" pattern="[a-zA-Z0-9]+" title="alphabets and numbers allowed"/> 
+  <input type="text" name="edit_description" class="form-control" id="edit_description" value='<?php echo $_POST['description']?>' required size="30" maxlength="30" pattern="[a-zA-Z0-9]+" title="alphabets and numbers allowed"/> 
 </div>
 
 
   
   	<div class="form-group">
    <label for="date">Iten Due Date :</label>
-  <input type="date" name="edit_duedate" id="edit_duedate" value='<?php echo $_POST['createdate']?>' required/> 
+  <input type="date" name="edit_duedate" id="edit_duedate"  class="form-control"value='<?php echo $_POST['createdate']?>' required/> 
   </div>
   
    	<div class="form-group">
    <label for="time">Item Due Time:</label>
-   <input type="time" name="edit_duetime"   id="edit_duetime" value='<?php echo $_POST['createtime']?>' required /> 
+   <input type="time" name="edit_duetime"   class="form-control" id="edit_duetime" value='<?php echo $_POST['createtime']?>' required /> 
    </div>
   
    <input type="hidden" name="action" value="edit_item" />

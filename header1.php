@@ -30,10 +30,9 @@
 }
 div.head1 {
     position: absolute;
-    top: 0px;
-    
+    top: 0px;    
     width: 100%;
-    height: 50%;
+    height: 14%;
     background-color:grey;
 }
 h1   {color: #2e6da4;
@@ -70,6 +69,7 @@ $(document).ready(function(){
 </td>
 <td align="right">
 <div style="border:40px">
+<?php echo "Welcome, ".$_COOKIE['my_firstname']." ". $_COOKIE['my_lastname'].        '</br>'?>;
 <form action="logout.php" method="post"> 
  <input id="button"  type="submit" value="Logout"  class="btn btn-primary logout" title="Logout"/>
  </form>

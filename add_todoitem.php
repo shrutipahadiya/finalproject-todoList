@@ -13,20 +13,13 @@
   <style>
   div.s1 {
     position: absolute;
-    top: 150px;
+    top: 20%;
     left: 500px;
     width: 200px;
     height: 10px;
     border: none;
 }
-div.head1 {
-    position: absolute;
-    top: 0px;
-    
-    width: 100%;
-    height: 13%;
-    background-color:grey;
-}
+
 h1   {color: #2e6da4;
 font-size:50px;
 
@@ -43,7 +36,8 @@ $(document).ready(function(){
 
 </head> 
 
-<body id="body-color">
+<body>
+
 <?php include 'header1.php'; ?>
 
 <div style="width:30%" class="s1">

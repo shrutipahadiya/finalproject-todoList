@@ -24,7 +24,7 @@ div.head1 {
     top: 0px;
     
     width: 100%;
-    height: 15%;
+    height: 13%;
     background-color:grey;
 }
 h1   {color: #2e6da4;
