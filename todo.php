@@ -51,27 +51,17 @@ $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 	include('list.php');
 }else if ($action == 'edit_item'){
  
- /*if(isset($_POST['item_id']) and isset($_POST['edit_description']) and $_POST['edit_description']!='' and isset($_POST['edit_duedate']) and $_POST['edit_duedate']!='' and isset($_POST['edit_duetime']) and $_POST['edit_duetime']!=''){
-*/
-
   $selected = $_POST['item_id'];
   $value = $_COOKIE['my_id'];
-
- // echo($selected);
- // echo($value);
   $description = filter_input(INPUT_POST, 'edit_description');
   $date = filter_input(INPUT_POST, 'edit_duedate');
   $time = filter_input(INPUT_POST, 'edit_duetime');
 
+if(isset($description) and  $description!='' and isset($date) and  $date!='' and isset( $time) and  $time!=''  ){
+   updateTodoItem($value,$selected,$description,$date,$time);
 
+  }
 
-
-
- updateTodoItem($value,$selected,$description,$date,$time);
- // updateTodoItem($_COOKIE['my_id'],$selected,$_POST['edit_description'],$_POST['edit_duedate'],$_POST['edit_duetime']);
-
-  //}
-  
  $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
  $resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
   include('list.php');
@@ -87,18 +77,6 @@ include('list.php');
 	 include('add_todoitem.php');
 
 	
-	
-	
-}/*else if($action == 'add_item'){
-	
+}
 
-  if(isset($_POST['add_description']) and $_POST['add_description']!='' and isset($_POST['add_duedate']) and $_POST['add_duedate']!='' and isset($_POST['add_duetime']) and $_POST['add_duetime']!=''  ){
-   addTodoItem($_COOKIE['my_id'],$_POST['add_description'],$_POST['add_duedate'],$_POST['add_duetime']);
-  }
-$resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
-$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
-include('../view/list.php');
-//header("location: ../todo_manager/../view/list.php");
-//exit(0);
-}*/
 ?>
