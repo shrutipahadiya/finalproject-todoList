@@ -102,17 +102,10 @@ $statement->closeCursor();
 $count=$statement->rowCount();
 
 if($count == 1) {
- //setcookie('login',$username);
- //setcookie('my_id',$result[0]['id']);
- //setcookie('islogged',true);
-return true;
+ return true;
  
  }else{
- //unset($_COOKIE['login']);
- //setcookie('login',false);
- //setcookie('islogged',false);
- //setcookie('id',false);
- return false;
+  return false;
  }
  }
  ?>
