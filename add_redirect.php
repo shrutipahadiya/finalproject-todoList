@@ -19,7 +19,7 @@ $add_id = $_COOKIE['my_id'];
 
 
 if(isset($add_description) and  $add_description!='' and isset($add_date) and  $add_date!='' and isset( $add_time) and  $add_time!=''  ){
-   addTodoItem($add_id,$add_description,$add_date,$add_id);
+   addTodoItem($add_id,$add_description,$add_date,$add_time);
   }
  // $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 //$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
