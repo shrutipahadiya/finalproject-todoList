@@ -11,8 +11,15 @@ $action = filter_input(INPUT_POST, "action");
 require('db_connect.php');
 require('todo_db.php');
 if($action == 'add_item') {
-if(isset($_POST['add_description']) and $_POST['add_description']!='' and isset($_POST['add_duedate']) and $_POST['add_duedate']!='' and isset($_POST['add_duetime']) and $_POST['add_duetime']!=''  ){
-   addTodoItem($_COOKIE['my_id'],$_POST['add_description'],$_POST['add_duedate'],$_POST['add_duetime']);
+
+ $add_description = filter_input(INPUT_POST, 'add_description');
+  $add_date = filter_input(INPUT_POST, 'add_duedate');
+  $add_time = filter_input(INPUT_POST, 'add_duetime');
+$add_id = $_COOKIE['my_id'];
+
+
+if(isset($add_description) and  $add_description!='' and isset($add_date) and  $add_date!='' and isset( $add_time) and  $add_time!=''  ){
+   addTodoItem($add_id,$add_description,$add_date,$add_id);
   }
  // $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 //$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
