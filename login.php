@@ -8,9 +8,9 @@
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="bootstrap.min.css">
-	<script type="text/javascript" href="jquery.min.js"></script> 
-	<script type="text/javascript" href="bootstrap.min.js"></script> 
+<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script type="text/javascript" href="js/jquery.min.js"></script> 
+	<script type="text/javascript" href="js/bootstrap.min.js"></script> 
 
 
 
@@ -47,7 +47,7 @@ $(document).ready(function(){
 </head> 
 
 <body id="body-color">
-<?php include 'header.php'; ?>
+<?php include 'view/header.php'; ?>
 <!--<div class="head1">
 <h1 align="center">Todo Application</h1>
 </div>-->
@@ -56,7 +56,7 @@ $(document).ready(function(){
   <div class="panel panel-primary">
       <div class="panel-heading">Login</div>
       <div class="panel-body">
-	  <form class="form-signin"  method ="post" action="index.php">
+	  <form class="form-signin"  method ="post" action="controller/index.php">
     <div class="form-group">
       <label for="usr">Email:</label>
 	  
@@ -74,7 +74,7 @@ $(document).ready(function(){
  </div>
 
   <div class="panel-body">
-<form action= "signup.php">
+<form action= "view/signup.php">
  <input id="button" class="btn btn-sm btn-primary btn-block" type="submit" value="Signup" data-toggle="tooltip" title="Click here to signup"/>
  </form></div>
     </div>
