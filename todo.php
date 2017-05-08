@@ -7,7 +7,7 @@ require('todo_db.php');
 require('header1.php');
 
 $action = filter_input(INPUT_POST, "action");
-echo $action;
+//echo $action;
 
 $action = filter_input(INPUT_POST, "action");
 if($action == NULL)
@@ -27,11 +27,11 @@ if(isset($_POST['item_id'])){
 	$resultcomplete = getCompleteTodoItems($_COOKIE['my_id']);
   include('list.php');
 }else if ($action == 'delete_item'){
-	echo "delete_item controller----";
+	//echo "delete_item controller----";
 if(isset($_POST['item_id'])){
 	$selected = $_POST['item_id'];
-	echo $selected;
-	echo $_COOKIE['my_id'];
+//	echo $selected;
+	//echo $_COOKIE['my_id'];
   deleteTodoItem($_COOKIE['my_id'],$selected);
 	}
 $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
@@ -57,8 +57,8 @@ $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
   $selected = $_POST['item_id'];
   $value = $_COOKIE['my_id'];
 
-  echo($selected);
-  echo($value);
+ // echo($selected);
+ // echo($value);
  
   updateTodoItem($_COOKIE['my_id'],$selected,$_POST['edit_description'],$_POST['edit_duedate'],$_POST['edit_duetime']);
 

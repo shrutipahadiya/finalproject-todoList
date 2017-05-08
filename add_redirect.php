@@ -4,10 +4,10 @@
 <?php
 
 $action = filter_input(INPUT_POST, "action");
-echo "action in redirect ------";
+//echo "action in redirect ------";
 
 $action = filter_input(INPUT_POST, "action");
-echo $action;
+//echo $action;
 require('db_connect.php');
 require('todo_db.php');
 if($action == 'add_item') {

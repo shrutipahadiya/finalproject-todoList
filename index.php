@@ -61,13 +61,13 @@ if($userExists == true){
 $birthdate =  date("Y-m-d", strtotime($date));
 $gender = filter_input(INPUT_POST, 'reg_gender');
 
-echo "11111111111111";
+//echo "11111111111111";
 
    //if(isset($name) and isset($pass) and isset($firstname) and isset($lastname) and isset($email) and isset($phonenumber) 
 	 //  and isset(birthdate) and isset(gender))
 	
  // {
-    echo "22222222222";
+   // echo "22222222222";
     $user_exists = createUser($name,$pass,$firstname,$lastname,$email,$phonenumber,$birthdate,$gender);
     if($user_exists == true)
     {
