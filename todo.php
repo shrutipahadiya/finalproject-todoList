@@ -59,8 +59,16 @@ $resultincomplete = getIncompleteTodoItems($_COOKIE['my_id']);
 
  // echo($selected);
  // echo($value);
- 
-  updateTodoItem($_COOKIE['my_id'],$selected,$_POST['edit_description'],$_POST['edit_duedate'],$_POST['edit_duetime']);
+  $description = filter_input(INPUT_POST, 'edit_description');
+  $date = filter_input(INPUT_POST, 'edit_duedate');
+  $time = filter_input(INPUT_POST, 'edit_duetime');
+
+
+
+
+
+ updateTodoItem($value,$selected,$description,$date,$time);
+ // updateTodoItem($_COOKIE['my_id'],$selected,$_POST['edit_description'],$_POST['edit_duedate'],$_POST['edit_duetime']);
 
   //}
   
